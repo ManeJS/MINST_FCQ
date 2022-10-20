@@ -12,7 +12,8 @@ uploaded_file = st.file_uploader("Carga una imagen ...", type=["jpg","jpeg"])
 if uploaded_file is not None:
   image = Image.open(uploaded_file)
   st.sidebar.image(image)
-  label = teachable_machine_classification(image, 'keras_model.h5') 
+  label = teachable_machine_classification(image, 'keras_model.h5')
+  st.write("jaja",label)
   if label == 0:
     st.write("EOSINOFILO")
   elif label == 1:
